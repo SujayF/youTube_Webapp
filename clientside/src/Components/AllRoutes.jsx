@@ -6,6 +6,7 @@ import YourVideo from "../Pages/YourVideo/YourVideo";
 import WatchHistory from "../Pages/WatchHistory/WatchHistory";
 import WatchLater from "../Pages/WatchLater/WatchLater";
 import VideoPage from "../Pages/VideoPage/VideoPage";
+import LikedVideo from "../Pages/LikedVideo/LikedVideo";
 
 function AllRoutes() {
   return (
@@ -16,6 +17,8 @@ function AllRoutes() {
       <Route path="/history" element={<WatchHistory />} />
       <Route path="/watchlater" element={<WatchLater />} />
       <Route path="/videopage/:vids" element={<VideoPage />} />
+      <Route path="/likedvideo" element={<LikedVideo/>}/>
+      <Route path='/yourvideos' element={<YourVideo/>}/>
     </Routes>
   );
 }

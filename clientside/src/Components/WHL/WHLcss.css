@@ -35,11 +35,12 @@
    color: white;
 }
 
+
 .leftside_whl{
     background-color: rgba(0, 0, 0, 0.153);
     height: 50vh;
 }
 
 .whl_list{
-    overflow-y: auto;
+    overflow-y:auto;
 }

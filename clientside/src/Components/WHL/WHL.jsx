@@ -1,39 +1,46 @@
-import React from 'react';
-import LeftSidebar from '../LeftSidebar/LeftSidebar';
-import './WHLcss.css'
-import WHLVideoList from './WHLVideoList';
+import React from "react";
+import LeftSidebar from "../LeftSidebar/LeftSidebar";
+import "./WHLcss.css";
+import WHLVideoList from "./WHLVideoList";
+// import { clearHistory } from "../../actions/History";
+// import LeftSidebar from "../LeftSidebar/LeftSidebar";
+// import { useSelector } from "react-redux";
 
-function WHL({page,videoList}) {
+function WHL({ page, videoList }) {
+  // const CurrentUser = useSelector((state) => state?.currentUserReducer);
+ 
+
   return (
     <div className="container_Pages_App">
-        <LeftSidebar />
-        <div className="container2_Pages_App">
-         
-         <p className="container_whl">
-                <div className="box_WHL leftside_whl">
-                    <b>Your {page} Shown Here </b>
-                       <div className="clear_History_btn">
-                        Clear History
-                       </div>
-                </div>
-         </p>
+      <LeftSidebar />
+      <div className="container2_Pages_App">
+        <p className="container_whl">
+          <div className="box_WHL leftside_whl">
+            <b>Your {page} Shown Here </b>
 
-          <div className='rightside_whl' >
+            {page === "History" && (
+              <div
+                className="clear_History_btn"
+                // onClick={() => handleClearHistory()}
+              >
+                Clear History
+              </div>
+            )}
+          </div>
+          <div className="rightside_whl">
             <h1>{page}</h1>;
             <div className="whl_list">
-              
-
-                <WHLVideoList
+              <WHLVideoList
                 page={page}
+                // CurrentUser={CurrentUser?.result._id}
                 videoList={videoList}
-                />
+              />
             </div>
           </div>
-
-        </div>
-    </div>    
-    
-  )
+        </p>
+      </div>
+    </div>
+  );
 }
 
-export default WHL
+export default WHL;
